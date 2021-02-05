@@ -1,0 +1,9 @@
+env
+__pycache__
+*.pyc
+Hormiga.py
+Matriz.py
+hormigadelangton1.py
+test.json
+test.py
+test2.py
