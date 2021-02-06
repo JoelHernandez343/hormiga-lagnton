@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 
 
 class Ventana:
@@ -24,6 +25,10 @@ class Ventana:
 
         lbl = tk.Label(master=contenedor, text="Elegir variante")
         lbl.pack(side=tk.TOP, anchor=tk.NW)
+
+        self.cmb_variante = ttk.Combobox(master=contenedor)
+        self.cmb_variante.pack(side=tk.TOP, anchor=tk.NW)
+        self.cmb_variante["values"] = ["Clásica", "4 hormigas"]
 
     def ejecutar(self):
         self.root.mainloop()
