@@ -58,6 +58,21 @@ class Ventana:
         self.btn_guardar_matriz = tk.Button(master=grupo, text="Matriz")
         self.btn_guardar_matriz.pack(fill="x", side="left", expand=True)
 
+        """ Configuracion de la matriz """
+        lbl = tk.Label(master=contenedor, text="Configuración de matriz:")
+        lbl.pack(side="top", anchor="nw")
+
+        grupo = tk.Frame(contenedor)
+        grupo.pack(side="top", fill="x")
+
+        tk.Label(master=grupo, text="Dimensión: (x,y) ").pack(side="left", fill="x")
+
+        self.mx = tk.Entry(master=grupo, width=5)
+        self.mx.pack(side="left", fill="x", padx=2)
+
+        self.my = tk.Entry(master=grupo, width=5)
+        self.my.pack(side="left", fill="x", padx=2)
+
         """ Configuración individual """
         lbl = tk.Label(master=contenedor, text="Configuración:")
         lbl.pack(side="top", anchor="nw")
@@ -77,7 +92,6 @@ class Ventana:
         grupo = ScrollableFrame(
             master=contenedor, borderwidth=1, relief="solid", width=250
         )
-        grupo.pack(fill="both")
 
         self.fr_lista_hormigas = tk.Frame(master=grupo.content)
         self.fr_lista_hormigas.pack(fill="x")
@@ -85,6 +99,8 @@ class Ventana:
         for i in range(200):
             h = HormigaPanel(master=self.fr_lista_hormigas, index=i, variante=1)
             h.pack(fill="x", padx=(10, 30))
+
+        grupo.pack(fill="both")
 
     def ejecutar(self):
         self.root.mainloop()
